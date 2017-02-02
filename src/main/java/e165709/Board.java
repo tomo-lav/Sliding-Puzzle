@@ -7,34 +7,39 @@ import java.util.ArrayList;
 
 */
 public class Board {
+    int[] a = new int[10];
+    int zero;
     public void board(){
-        int[] a = new int[10];
+        //int[] a = new int[10];
 
         for (int i = 1; i <= 9; i++){
-            a[i] = i - 1;
-            System.out.printf(" %d",a[i]);
+            a[i-1] = i - 1;
+            System.out.printf(" %d",a[i-1]);
             if (i % 3 == 0){
                 System.out.printf("\n");
             }
         }
+        zero = a[0];
     }
 
-
-
-
-    /*
-    public void board(){
-        int[][] a = {{0,1,2},{3,4,5},{6,7,8}};
-
-        for (int row = 0; row < 3; row++) {
-            for (int column = 0; column < 3; column++) {
-                if (column == 2) {
-                    System.out.printf(" %d\n", a[row][column]);
-                } else {
-                    System.out.printf(" %d", a[row][column]);
-                }
-            }
-        }
+    public void swap(int s,int t){
+        int p;
+        zero = a[t];
+        
+        p = a[s];
+        a[s] = a[t];
+        a[t] = p;
     }
-    */
+    public void up(){
+        swap(zero,zero-3);
+    }
+    public void down(){
+        swap(zero,zero+3);
+    }
+    public void right(){
+        swap(zero,zero+1);
+    }
+    public void left(){
+        swap(zero,zero-1);
+    }
 }
