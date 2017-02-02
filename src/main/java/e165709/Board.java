@@ -1,22 +1,29 @@
 package e165709;
+
+import java.util.ArrayList;
+
 //盤面のクラス
 /*
 
 */
 public class Board {
-    private int[][] board = new int [3][3];
-
     public void board(){
-        int a = 0;
-        for (int i = 0; i < 3; i++){
-            for (int n = 0; n < 3; n++){
-                board[i][n] = a;
-                a++;
-                System.out.println(board[i][n]);
+        int[] a = new int[10];
+
+        for (int i = 1; i <= 9; i++){
+            a[i] = i - 1;
+            System.out.printf(" %d",a[i]);
+            if (i % 3 == 0){
+                System.out.printf("\n");
             }
         }
     }
-    public void printboard(){
+
+
+
+
+    /*
+    public void board(){
         int[][] a = {{0,1,2},{3,4,5},{6,7,8}};
 
         for (int row = 0; row < 3; row++) {
@@ -29,4 +36,5 @@ public class Board {
             }
         }
     }
+    */
 }
