@@ -1,5 +1,6 @@
 package e165709;
 
+//０の動きを担うクラス
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -7,6 +8,8 @@ public class Move extends Shuffle {
 
     @Override
     public void up(){
+        //０の、上方向の動きを担うメソッド
+        //これ以外の移動メソッドも同じコードを使っている
         if(getZero()-3 < 0){
             System.out.println("Out of board");
         }else{
@@ -42,6 +45,9 @@ public class Move extends Shuffle {
     }
 
     public void playerinput() {
+        //プレイヤーの入力を受け付けるメソッド
+        //数字の1,2,3,4を、上、下、右、左の順で当てはめている
+        //また、設定されていない入力を受け付けた場合、catch文でエラーを出力するようにしている
         int key;
 
         try {

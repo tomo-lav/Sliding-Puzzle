@@ -1,13 +1,17 @@
 package e165709;
 
+//ボードをシャッフルするクラス
 import java.util.Random;
 
-public class Shuffle extends Board{
+public class Shuffle extends Board {
+
     public void shuffle(){
+        //盤面をシャッフルするためのメソッド
         Random rnd = new Random();
 
+        //シャッフルを100回繰り返す
         for (int i = 0;i < 100; i++){
-            int ran = rnd.nextInt(8);
+            int ran = rnd.nextInt(8); //0~7の数字の中から一つをランダムに選び、ranに代入
             switch(ran){
                 case 0:
                 case 1:
@@ -30,28 +34,24 @@ public class Shuffle extends Board{
 
     public void up(){
         if(getZero()-3 < 0){
-
         }else{
             swap(getZero(), getZero()-3);
         }
     }
     public void down(){
         if(getZero()+3 > 8){
-
         }else{
             swap(getZero(),getZero()+3);
         }
     }
     public void right(){
         if(getZero()%3 == 2){
-
         }else{
             swap(getZero(),getZero()+1);
         }
     }
     public void left(){
         if(getZero()%3 == 0){
-
         }else{
             swap(getZero(),getZero()-1);
         }
